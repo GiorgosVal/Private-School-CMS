@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "title": "Coding Bootcamp",
+      "stream": "Full-time",
+      "type": "Java",
+      "start": "2018-09-15",
+      "end" : "2018-12-31"
+    },
+    {
+        "id": 2,
+        "title": "Robotics",
+        "stream": "Full-time",
+        "type": "Robot Modeling",
+        "start": "2018-09-15",
+        "end" : "2018-12-31"
+    },
+    {
+        "id": 3,
+        "title": "Applied Mathematics",
+        "stream": "Part-time",
+        "type": "MatLab",
+        "start": "2018-09-15",
+        "end" : "2018-12-31"
+    },
+    {
+        "id": 4,
+        "title": "Embedeed Systems",
+        "stream": "Part-time",
+        "type": "Arduino",
+        "start": "2018-09-15",
+        "end" : "2018-12-31"
+    },
+    {
+        "id": 5,
+        "title": "CAD Design",
+        "stream": "Part-time",
+        "type": "AutoCAD 3D",
+        "start": "2018-09-15",
+        "end" : "2018-12-31"
+    }
+  ]

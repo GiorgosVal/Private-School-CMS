@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "William",
+        "surname": "Arnold",
+        "subject": "Front-end"
+    },
+    {
+        "id": 2,
+        "name": "Vernice",
+        "surname": "McEvoy",
+        "subject": "Databases"
+    },
+    {
+        "id": 3,
+        "name": "Ella",
+        "surname": "Trent",
+        "subject": "Algorithms"
+    },
+    {
+        "id": 4,
+        "name": "Michael",
+        "surname": "Ortiz",
+        "subject": "Electronics"
+    },
+    {
+        "id": 5,
+        "name": "Rikki",
+        "surname": "Jose",
+        "subject": "Technical Drawing"
+    },
+    {
+        "id": 6,
+        "name": "Nathan",
+        "surname": "Dufresne",
+        "subject": "Backend"
+    },
+    {
+        "id": 7,
+        "name": "Mary",
+        "surname": "Warner",
+        "subject": "Servo motors"
+    },
+    {
+        "id": 8,
+        "name": "Kimberly",
+        "surname": "Graham",
+        "subject": "R language"
+    },
+    {
+        "id": 9,
+        "name": "Travis",
+        "surname": "Giannini",
+        "subject": "Sensors"
+    },
+    {
+        "id": 10,
+        "name": "Don",
+        "surname": "Brown",
+        "subject": "HMI"
+    }
+]

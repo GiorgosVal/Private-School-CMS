@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Enrollments</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    type="text/css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+  <!-- Animate js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <!-- Fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" type="text/css" href="resources/css/index-style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img id="logo" src="vendors/img/logo2.webp" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-link-hover" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-hover" href="courses.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-hover" href="/trainers.html">Trainers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-hover" href="/assignments.html">Assignments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-hover" href="/students.html">Students</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle nav-link-hover" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More options
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item nav-link-hover" href="/trainerspercourse.html">Trainers per Course</a>
+                <a class="dropdown-item nav-link-hover active" href="/studentspercourse.html">Students per Course</a>
+                <a class="dropdown-item nav-link-hover" href="/assignmentspercourse.html">Assignments per Course</a>
+                <a class="dropdown-item nav-link-hover" href="/assignmentsperstudent.html">Assignments per Student</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main id="studMain">
+    <div class="container">
+      <!-- <div class="row padding-top">
+        <button type="button" id="add-btn" class="btn btn-success" data-toggle="modal" data-target="#Modal"
+          data-message="Add a new Course"><i class="far fa-plus-square"></i> Add a new Course</button>
+      </div> -->
+
+
+      <div class="row padding-top">
+        <h2>Select course and see the students list.</h2>
+        <select id="coursesShow" name="stream" class="form-control" required>
+          <option value="0"></option>
+        </select>
+      </div>
+
+      <div id="addTrainer" class="row padding-top">
+
+      </div>
+
+      <!-- TABLE -->
+      <div class="row padding-top">
+        <table id="table" class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" hidden>id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Surname</th>
+              <!-- <th scope="col">Subject</th> -->
+              <!-- <th scope="col">Edit</th> -->
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- table data from JSON-->
+            <tr>
+              <td>Select a course</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="modalForm" method="POST">
+              <div class="form-group">
+                <label for="name" class="col-form-label">Name:</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="form-group">
+                <label for="surname" class="col-form-label">Surname:</label>
+                <input type="text" class="form-control" id="surname" required>
+              </div>
+              <!-- <div class="form-group">
+                <label for="dob" class="col-form-label">Subject:</label>
+                <input type="text" class="form-control" id="subject" required>
+              </div> -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Send message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <footer class="bg-custom-red">
+    <div class="container">
+      <div class="row padding-top">
+        <div class="col-md-12 text-center">
+          <p>This is a demo front-end project using JSON objects to generate data tables</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+  <!--JQUERY-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!--BOOTSTRAP-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!--Toastr.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <!-- Font -->
+  <script src="https://kit.fontawesome.com/c32518948b.js"></script>
+  <!--My script-->
+  <script type="text/javascript" src="resources/js/studentspercourse.js"></script>
+</body>
+
+</html>

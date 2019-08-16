@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Homework</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    type="text/css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+  <!-- Animate js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <!-- Fonts-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" type="text/css" href="resources/css/index-style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img id="logo" src="vendors/img/logo2.webp" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-link-hover" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-hover" href="courses.html">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-hover" href="/trainers.html">Trainers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-hover" href="/assignments.html">Assignments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-hover" href="/students.html">Students</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle nav-link-hover" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More options
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item nav-link-hover" href="/trainerspercourse.html">Trainers per Course</a>
+                <a class="dropdown-item nav-link-hover" href="/studentspercourse.html">Students per Course</a>
+                <a class="dropdown-item nav-link-hover" href="/assignmentspercourse.html">Assignments per Course</a>
+                <a class="dropdown-item nav-link-hover active" href="/assignmentsperstudent.html">Assignments per Student</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main id="homeworkMain">
+    <div class="container">
+      <!-- <div class="row padding-top">
+        <button type="button" id="add-btn" class="btn btn-success" data-toggle="modal" data-target="#Modal"
+          data-message="Add a new Course"><i class="far fa-plus-square"></i> Add a new Course</button>
+      </div> -->
+
+
+      <div class="row padding-top">
+        <h2>Select course and student and see his homework.</h2>
+        <select id="coursesShow" name="stream" class="form-control" required>
+          <option value="0"></option>
+          <option id="co1" value="1">Coding Bootcamp</option>
+          <option id="co2">Robotics</option>
+          <option id="co3">Applied Mathematics</option>
+          <option id="co4">Embedeed Systems</option>
+          <option id="co5">CAD Design</option>
+        </select>
+      </div>
+
+      <div class="row padding-top">
+          <select id="studentsShow" name="stream" class="form-control" required>
+            <option value="0"></option>
+            <option id="co1" value="1">Harold	Graham</option>
+            <option id="co2">Frank Hillman</option>
+            <option id="co3">Kevin	Chase</option>
+            <option id="co4">Marie	Lombardo</option>
+            <option id="co5">Rebecca	Marten</option>
+            <option id="co5">Adrian	Fortier</option>
+            <option id="co5">Rebecca	Marten</option>
+            <option id="co5">Erica	Neal</option>
+            <option id="co5">Marjorie	Ward</option>
+            <option id="co5">Patricia	Goodn</option>
+          </select>
+        </div>
+
+
+
+      <div id="addTrainer" class="row padding-top">
+
+      </div>
+
+      <!-- TABLE -->
+      <div class="row padding-top">
+        <table id="table" class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" hidden>id</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Oral mark</th>
+              <th scope="col">Total mark</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+              <tr>
+                 <th scope="row" hidden>1</th>
+                <td>Harold</td>
+                <td>Graham</td>
+                <td>55</td>
+                <td>90</td>
+                <td><i class="far fa-edit fa-2x" data-toggle="modal" data-target="#Modal" data-message="Edit Trainer" data-id="' + id + '" data-name="' + name + '" data-surname="' + surname + '" data-subject="' + subject + '" ></i></td>';
+                <td><i class="far fa-minus-square fa-2x" onclick="deleteFunction(id)"></i></td></tr>
+                <th scope="row" hidden>1</th>
+               <td>Frank</td>
+               <td>Hillman</td>
+               <td>55</td>
+               <td>90</td>
+               <td><i class="far fa-edit fa-2x" data-toggle="modal" data-target="#Modal" data-message="Edit Trainer" data-id="' + id + '" data-name="' + name + '" data-surname="' + surname + '" data-subject="' + subject + '" ></i></td>';
+               <td><i class="far fa-minus-square fa-2x" onclick="deleteFunction(id)"></i></td></tr>
+               <th scope="row" hidden>1</th>
+              <td>Kevin</td>
+              <td>Chase</td>
+              <td>55</td>
+              <td>90</td>
+              <td><i class="far fa-edit fa-2x" data-toggle="modal" data-target="#Modal" data-message="Edit Trainer" data-id="' + id + '" data-name="' + name + '" data-surname="' + surname + '" data-subject="' + subject + '" ></i></td>';
+              <td><i class="far fa-minus-square fa-2x" onclick="deleteFunction(id)"></i></td></tr>
+              <th scope="row" hidden>1</th>
+             <td>Marie</td>
+             <td>Lombardo</td>
+             <td>55</td>
+             <td>90</td>
+             <td><i class="far fa-edit fa-2x" data-toggle="modal" data-target="#Modal" data-message="Edit Trainer" data-id="' + id + '" data-name="' + name + '" data-surname="' + surname + '" data-subject="' + subject + '" ></i></td>';
+             <td><i class="far fa-minus-square fa-2x" onclick="deleteFunction(id)"></i></td></tr>
+             <th scope="row" hidden>1</th>
+            <td>Rebecca</td>
+            <td>Marten</td>
+            <td>55</td>
+            <td>90</td>
+            <td><i class="far fa-edit fa-2x" data-toggle="modal" data-target="#Modal" data-message="Edit Trainer" data-id="' + id + '" data-name="' + name + '" data-surname="' + surname + '" data-subject="' + subject + '" ></i></td>';
+            <td><i class="far fa-minus-square fa-2x" onclick="deleteFunction(id)"></i></td></tr>
+            <th scope="row" hidden>1</th>
+           <td>Adrian</td>
+           <td>Fortier</td>
+           <td>55</td>
+           <td>90</td>
+           <td><i class="far fa-edit fa-2x" data-toggle="modal" data-target="#Modal" data-message="Edit Trainer" data-id="' + id + '" data-name="' + name + '" data-surname="' + surname + '" data-subject="' + subject + '" ></i></td>';
+           <td><i class="far fa-minus-square fa-2x" onclick="deleteFunction(id)"></i></td></tr>
+           <th scope="row" hidden>1</th>
+          <td>Erica</td>
+          <td>Neal</td>
+          <td>55</td>
+          <td>90</td>
+          <td><i class="far fa-edit fa-2x" data-toggle="modal" data-target="#Modal" data-message="Edit Trainer" data-id="' + id + '" data-name="' + name + '" data-surname="' + surname + '" data-subject="' + subject + '" ></i></td>';
+          <td><i class="far fa-minus-square fa-2x" onclick="deleteFunction(id)"></i></td></tr>
+          <th scope="row" hidden>1</th>
+         <td>Marjorie</td>
+         <td>Ward</td>
+         <td>55</td>
+         <td>90</td>
+         <td><i class="far fa-edit fa-2x" data-toggle="modal" data-target="#Modal" data-message="Edit Trainer" data-id="' + id + '" data-name="' + name + '" data-surname="' + surname + '" data-subject="' + subject + '" ></i></td>';
+         <td><i class="far fa-minus-square fa-2x" onclick="deleteFunction(id)"></i></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="modalForm" method="POST">
+              <div class="form-group">
+                <label for="name" class="col-form-label">Name:</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="form-group">
+                <label for="surname" class="col-form-label">Surname:</label>
+                <input type="text" class="form-control" id="surname" required>
+              </div>
+              <!-- <div class="form-group">
+                <label for="dob" class="col-form-label">Subject:</label>
+                <input type="text" class="form-control" id="subject" required>
+              </div> -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Send message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <footer class="bg-custom-red">
+    <div class="container">
+      <div class="row padding-top">
+        <div class="col-md-12 text-center">
+          <p>This is a demo front-end project using JSON objects to generate data tables</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+  <!--JQUERY-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!--BOOTSTRAP-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!--Toastr.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <!-- Font -->
+  <script src="https://kit.fontawesome.com/c32518948b.js"></script>
+  <!--My script-->
+  <script type="text/javascript" src="resources/js/assignmentsperstudent.js"></script>
+</body>
+
+</html>

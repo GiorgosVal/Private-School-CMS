@@ -1,0 +1,72 @@
+[
+    {
+      "id": 1,
+      "name": "Harold",
+      "surname": "Graham",
+      "dob" : "1987-11-14",
+      "fees": 250
+    },
+    {
+      "id": 2,
+      "name": "Frank",
+      "surname": "Hillman",
+      "dob" : "1990-10-26",
+      "fees": 350
+    },
+    {
+      "id": 3,
+      "name": "Kevin",
+      "surname": "Chase",
+      "dob" : "1994-09-04",
+      "fees": 400
+    },
+    {
+      "id": 4,
+      "name": "Marie",
+      "surname": "Lombardo",
+      "dob" : "1995-05-16",
+      "fees": 500
+    },
+    {
+      "id": 5,
+      "name": "Rebecca",
+      "surname": "Marten",
+      "dob" : "2000-01-05",
+      "fees": 275
+    },
+    {
+      "id": 6,
+      "name": "Adrian",
+      "surname": "Fortier",
+      "dob" : "1998-12-23",
+      "fees": 500.00
+    },
+    {
+      "id": 7,
+      "name": "Erica",
+      "surname": "Neal",
+      "dob" : "1990-10-26",
+      "fees": 600.00
+    },
+    {
+      "id": 8,
+      "name": "Marjorie",
+      "surname": "Ward",
+      "dob" : "1987-11-14",
+      "fees": 400.00
+    },
+    {
+      "id": 9,
+      "name": "Patricia",
+      "surname": "Good",
+      "dob" : "1994-09-04",
+      "fees": 800.00
+    },
+    {
+      "id": 10,
+      "name": "Diego",
+      "surname": "McDermott",
+      "dob" : "1995-05-16",
+      "fees": 750.00
+    }
+  ]
